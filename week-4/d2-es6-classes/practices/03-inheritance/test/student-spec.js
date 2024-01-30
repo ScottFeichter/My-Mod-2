@@ -9,7 +9,7 @@ describe("Student class", () => {
   let student1;
 
   beforeEach(() => {
-    student1 = new Student("billy", "johnson", "software-development", 3.2);
+    student1 = new Student("billy", "johnson", 24, "software-development", 3.2);
   });
   describe("Student constructor", () => {
     it("should set the firstName property", () => {
@@ -35,7 +35,7 @@ describe("Student class", () => {
 
   describe("compareGPA static method", () => {
     it("should return the student with the highest GPA", () => {
-      let student2 = new Student("sarah", "smith", "basket-weaving", 3.7);
+      let student2 = new Student("sarah", "smith", 22, "basket-weaving", 3.7);
       expect(Student.compareGPA(student1, student2)).to.eql(
         "sarah smith has the higher GPA."
       );

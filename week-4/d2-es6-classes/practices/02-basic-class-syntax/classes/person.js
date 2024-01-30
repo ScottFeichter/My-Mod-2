@@ -6,9 +6,7 @@ class Person {
   }
 
   introduce() {
-    console.log(
-      `Hi, I'm ${this.firstName} ${this.lastName}, and I am ${this.age} years old.`
-    );
+    return `Hi, I'm ${this.firstName} ${this.lastName}, and I am ${this.age} years old.`;
   }
 
   static introducePeople(people) {
@@ -17,7 +15,7 @@ class Person {
       return;
     }
     for (let person of people) {
-      if (person instanceof Person === false) {
+      if (!(person instanceof Person)) {
         console.log("All items in array must be Person class instances");
         return;
       }
