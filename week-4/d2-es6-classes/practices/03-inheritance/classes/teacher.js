@@ -1,8 +1,8 @@
 const Person = require("./person");
 
 class Teacher extends Person {
-  constructor(firstName, lastName, age, subject, yearsOfExperience) {
-    super(firstName, lastName, age);
+  constructor(firstName, lastName, subject, yearsOfExperience) {
+    super(firstName, lastName);
     this.subject = subject;
     this.yearsOfExperience = yearsOfExperience;
   }
