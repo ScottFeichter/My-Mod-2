@@ -1,5 +1,5 @@
 // Convert restSum into a multi-line fat-arrow function
-const restSum = function(...otherNums) {
+const restSum = (...otherNums) => {
   let sum = otherNums.reduce((acc, el) => (acc += el));
   return sum;
 };
@@ -12,9 +12,8 @@ console.log(restSum(1, 2, 3)); // 6
 //   person.firstName + " " + person.lastName;
 // };
 
-const getFullName = function(person) {
-  return person.firstName + " " + person.lastName
-};
+const getFullName = person => person.firstName + " " + person.lastName;
+
 
 class Person {
   constructor(firstName, lastName) {
