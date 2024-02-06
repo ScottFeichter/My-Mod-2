@@ -12,19 +12,18 @@ function addNums(end) {
   return counter;
 }
 
-console.time("Timer1");
+console.time("Timer1", "Time");
 addNums(20000000);
-console.timeLog("Timer1");
-// console.timeEnd("Timer1");
+console.timeLog("Timer1", "Log");
+// console.timeEnd("Timer1", "End");
 
-startTime = Date.now();
+let startTime = Date.now();
 addNums(20000000);
-endTime = Date.now();
+let endTime = Date.now();
+console.log("startTime", startTime);
+console.log("endTime", endTime);
+console.log("timeResult: ", `${endTime - startTime}`);
 
-console.log(endTime - startTime);
-console.log(`${endTime - startTime}`);
-console.log(endTime);
-console.log(startTime);
 
 let increment = 1000000;
 for (let n = increment; n <= 10 * increment; n += increment) {
