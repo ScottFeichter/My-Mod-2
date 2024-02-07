@@ -5,24 +5,25 @@ Consult documentation on how to utilize the following methods:
   toString()
 */
 
-/* Base 10 to base 2 */
+// Base 10 to base 2
 function decimalToBinary(blob) {
-  // Your code here
+  return "0b" + blob.toString(2);
 }
 
-/* Base 10 to base 16 */
+// Base 10 to base 16
 function decimalToHexadecimal(blob) {
-  // Your code here
+  return "0x" + blob.toString(16);
 }
+// Base 2 to base 10
 
-/* Base 2 to base 10 */
 function binaryToDecimal(blob) {
-  // Your code here
+  let binaryStr = blob.substring(2);
+  return parseInt(binaryStr, 2);
 }
 
-/* Base 16 to base 10 */
+// Base 16 to base 10
 function hexadecimalToDecimal(blob) {
-  // Your code here
+  return parseInt(blob.substring(2), 16);
 }
 
 // console.log('Decimal to binary:')
@@ -44,10 +45,9 @@ function hexadecimalToDecimal(blob) {
 // console.log(hexadecimalToDecimal('0x51'))    // 81
 // console.log(hexadecimalToDecimal('0x10ff'))  // 4351
 
-
 module.exports = {
   decimalToBinary,
   decimalToHexadecimal,
   binaryToDecimal,
-  hexadecimalToDecimal
-}
+  hexadecimalToDecimal,
+};
