@@ -4,7 +4,6 @@ SINGLE LINK LIST
 add to head:
 1. length++
 2. init newNode
-
 3. set newNode.next to this.head
 4. set this.head to newNode
 
