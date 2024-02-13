@@ -39,17 +39,16 @@ function selectionSortInPlace(arr) {
   // Set a pointer at zero diving the array into sorted and unsorted halves
   let divider = 0;
 
-
   // Repeat while the unsorted half is not empty:
-  while (arr.slice(divider + 1).length !== 0) {
+  while (divider < arr.length) {
     // Do not move this console.log
     console.log(arr.join(","));
 
     // Find the index of the minimum value in the unsorted half
 
-    let minValIdx = divider + 1;
+    let minValIdx = divider;
 
-    for (let i = divider + 2; i < arr.length + 1; i++) {
+    for (let i = divider + 1; i < arr.length; i++) {
       if (arr[i] < arr[minValIdx]) {
         minValIdx = i;
       }
@@ -57,16 +56,20 @@ function selectionSortInPlace(arr) {
 
     // Save the min value
 
-    let temp = arr.splice(minValIdx, 1);
+    let temp = arr[minValIdx];
 
     // Shift every unsorted value to the left of the min value to the right by 1
-    arr.shift(temp);
+    for (let i = minValIdx; i >= divider; i--) {
+      arr[i] = arr[i - 1];
+    }
 
     // Put the min value at the divider
+    arr[divider] = temp;
 
     // Increment the divider and repeat
-    divider++
+    divider++;
   }
+  return arr;
 }
 
 module.exports = [selectionSort, selectionSortInPlace];
